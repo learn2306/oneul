@@ -1,0 +1,851 @@
+@charset "utf-8";
+@import url('font.css');
+@import url('all.min.css');
+
+#wrap {width: 100%;}
+#banner {
+    width: 100%; height: 580px;
+    background: url(../img/menu_benner.jpg);    
+}
+/* header */
+header {
+    height: 132px;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    transition: all 0.3s;
+  }
+  header .logo {
+    background: url(../img/logo_on.png) no-repeat center;
+    width: 20%; height: 132px; line-height: 132px;
+    position: absolute; top: 0; left: 0;  
+  }
+  header .gnb {
+    position: fixed;
+    width: 60%; height: 132px;
+    top: 0; left: 360px;
+    /* left: 50%; transform: translateX(-50%); -> 모바일에서 50%이동상태로 뜸 */
+  }
+  /* header .gnb > ul {display: flex; align-items: center;} ->header위치 gnb li 고정, 일케쓰면 예쁨(madein쌤) 모바일에서 .gnb flex해제가 잘 되지 않으므로 flex->float으로 다시 변경 */
+  
+  header .gnb > ul > li {
+    position: relative; /* !:.sub li */
+    /* display: flex;
+    flex: 1; */ 
+    float: left;
+  }
+  /* header .gnb > ul > li:hover .sub {display: block;} */ 
+  /* header .gnb > ul > li:hover .bg_gnb {display: block;} */
+  header .gnb > ul > li > a {
+    color: white;
+    font-size: 20px; text-align: center;
+    line-height: 132px;
+    padding: 0 50px;
+    display: block;
+    transition: 0.1s;
+  }
+  header .gnb > ul > li:hover .sub ul {display: block;}
+  header .gnb > ul > li > a:last-child {margin-right: 0;}
+  header .gnb > ul > li:hover > a {color: #c27a34;}
+  header .sub {
+    position: absolute;
+    top: 133px;
+    /* top: 150px; */ left: 0;
+    width: 100%; height: auto;  
+    display: none;
+    transition: 0.1s;
+  }
+  /* header .sub > ul {
+    position: absolute;
+    width: 100%; height: 200px; 
+    top: 0; left: -27px; right: 0;
+    padding-top: 20px;
+    display: none;
+  } */
+  header .sub > ul > li {
+    width: 150%;   /* 1 */
+    position: relative; /* 3:absolute-위로 올라가서 나머지만 나타남, relative일때 전부 출력 */
+    left: -45px; /* 2 */
+    line-height: 2.5; 
+    text-align: center;
+  }
+  header .sub ul > li > a {
+    color: #222; text-align: center;     
+    font-size: 17px;
+  }
+  header .sub ul > li a:hover {
+    border-bottom: 1px solid #222;
+    transform: all 0.3s;
+  }/* 1013 */
+  header .menu_right_web {
+    display: block;
+    background: url(../img/icon_hamw.png) no-repeat;
+    position: fixed;
+    top: 40px; right: 0;
+    width: 5%; height: 132px; line-height: 132px;
+    z-index: 100;
+  }
+  header .menu_right_mob {display: none;}
+  .bg_gnb {
+    position: fixed;
+    top: 101px; left: 0;
+    width: 100%; height: 240px;
+    background: #fff;  
+    z-index: 3; /* z-index:100 */
+    display: none;
+    transition: all 0.1s;  
+  }
+  
+  /* header.touch->on height: 132px */
+  header.on {  
+    background: white;
+    border-bottom: 1px solid #eee; 
+  }
+  .on .logo {
+    background: url(../img/logo.png) no-repeat center;
+    height: 132px; line-height: 132px;
+    top: 0; left: 0; 
+  }
+  .on .gnb > ul {background: white;}
+  .on .gnb > ul > li {height: 132px; line-height: 132px;}
+  .on .gnb > ul > li > a {color: black;}
+  .on .menu_right_web {
+    display: block;
+    background: url(../img/icon_hamb.png) no-repeat;
+    top: 40px; right: 0;
+    width: 5%; height: 132px; line-height: 132px;
+  }
+  .on .menu_right_mob {display: none;}
+  
+  /* header.on->touch - height: 100px */
+  header.touch {
+    background: #fff;
+    height: 100px; line-height: 100px;  
+  }
+  header.touch .logo {
+    background: url(../img/logo.png) no-repeat center;
+    width: 20%; height: 100px; line-height: 100px;
+    top: 0; left: 0;  
+  }
+  header.touch .gnb {height: 100px; line-height: 100px;}
+  header.touch .gnb > ul > li {height: 100px; line-height: 100px;}
+  header.touch .gnb > ul > li > a {
+    display: block;
+    color: black; 
+    line-height: 100px;
+    font-weight: 500;
+  }
+  .touch .gnb .sub {
+    /* height: auto; */ top: 100px; /* height: auto; 기능차이가 나타나지X */
+  }
+  /* .on .bg_gnb {display: block;} */
+  .touch .menu_right_web {
+    display: block;
+    background: url(../img/icon_hamb.png) no-repeat;
+    top: 30px; right: 0;
+    width: 5%; height: 100px; line-height: 100px;
+  }
+  .touch .menu_right_mob {display: none;}
+  /* .gnb:hover .bg_gnb {display: block;}  */
+  /* header.on .sub {
+    display: none;
+    width: 100%; height: 200px; position: relative; top: 0; left: 0; right: 0;
+  } */
+  header.fixed {
+    height: 100px;
+    line-height: 100px;
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+  }
+
+/* modalBox */
+.modalBox {
+    width: 100vw; height: 100vh;
+    background: #383431;
+    position: relative;
+    display: none;
+    z-index: 1000;
+}
+.btnClose {
+    position: absolute;
+    top: 100px; right: 100px;
+}
+.open {display: block;}
+#sitemap {
+    width: 1000px; height: 100vh;
+    margin: 0 auto; padding: 140px 0;
+    box-sizing: border-box;
+}
+#sitemap .btnClose {
+    position: absolute;
+    top: 60px; right: 60px;
+}
+#sitemap .menu {
+    width: 1200px;
+    margin-bottom: 100px;
+}
+#sitemap .menu h1 img {
+    display: block;
+    margin: 0 auto 200px; 
+}
+#sitemap .menu > ul > li {
+    position: relative;
+    float: left;
+    width: calc(100% / 5);
+}
+#sitemap .menu > ul > li > a {
+    float: left;
+    width: 100%;
+    font-family: "Montaga", serif;  
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+    display: block;
+    box-sizing: border-box;
+    padding: 20px 60px;
+}
+#sitemap .menu ul li ul {
+    position: absolute;
+    top: 80px; left: 0;
+    width: 100%;
+    padding: 10px 0;
+}
+#sitemap .menu > ul ul li a {
+    display: block;
+    font-family: "Montserrat", "Noto Sans KR", sans-serif;
+    font-size: 20px;
+    color: #dac5b6;
+    text-align: center;
+    line-height: 40px;
+}
+#sitemap .menu > ul > li > ul > li > a:hover {color: white;}
+#sitemap .flogo {
+    width: 1000px;
+    margin: 200px auto;
+    text-align: center;
+}
+  
+/* banner : header */
+#banner .inner {    
+    width: 100%; height: 448px;
+    position: absolute;
+    top: 133px; left: 0;
+  /*   background: lightgray;     */
+}
+#banner .inner .ban_textarea {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+}
+#banner .inner .t1 {
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif; 
+    font-size: 16px;   
+    line-height: 1.5;
+}
+#banner .inner .t2 {
+    font-family: 'Montaga', serif;
+    font-size: 60px;
+    line-height: 1.5;
+}
+
+/* div : sub_lunchmenu - Lunch */
+#sub_lunchmenu {
+    width: 100%; height: 84px;
+    border-bottom: 1px solid #ddd;
+}
+#sub_lunchmenu .weblunch {
+    display: block;
+    width: 900px; margin: 0 auto;
+}
+#sub_lunchmenu .moblunch {display: none;}
+#sub_lunchmenu .weblunch li {
+    float: left;
+    width: 180px; 
+    line-height: 80px;
+    text-align: center;
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif; 
+    font-size: 22px; position: relative;
+}
+#sub_lunchmenu .weblunch li:first-child {color: #c27a34;}
+#sub_lunchmenu .weblunch li:first-child a:after {
+    position: absolute;
+    top: 80px; left: 34px;
+    width: 111px; height: 4px;
+    background: #c27a34;
+    content: ''
+}
+#sub_lunchmenu .weblunch li a:hover {
+    color: #c27a34;
+    border-bottom: 4px solid #c27a34;
+    display: inline-block;
+}
+
+/* div : sub_lunchmenu - Dinner */
+#sub_lunchmenu .webdinner {
+    display: block;
+    width: 900px; margin: 0 auto;
+}
+#sub_lunchmenu .mobdinner {display: none;}
+#sub_lunchmenu .webdinner li {
+    float: left;
+    width: 180px; 
+    line-height: 80px;
+    text-align: center;
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif; 
+    font-size: 22px; position: relative;
+}
+#sub_lunchmenu .webdinner li:nth-child(3) {color: #c27a34;}
+#sub_lunchmenu .webdinner li:nth-child(3) a:after {
+    position: absolute;
+    top: 80px; left: 53px;
+    width: 76px; height: 4px;
+    background: #c27a34;
+    content: ''
+}
+#sub_lunchmenu .webdinner li a:hover {
+    color: #c27a34;
+    border-bottom: 4px solid #c27a34;
+    display: inline-block;
+}
+
+/* div : sub_lunchmenu - Party */
+#sub_lunchmenu .webparty {
+    display: block;
+    width: 900px; margin: 0 auto;
+}
+#sub_lunchmenu .mobparty {display: none;}
+#sub_lunchmenu .webparty li {
+    float: left;
+    width: 180px; 
+    line-height: 80px;
+    text-align: center;
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif; 
+    font-size: 22px; position: relative;
+}
+#sub_lunchmenu .webparty li:nth-child(5) {color: #c27a34;}
+#sub_lunchmenu .webparty li:nth-child(5) a:after {
+    position: absolute;
+    top: 80px; left: 0;
+    width: 180px; height: 4px;
+    background: #c27a34;
+    content: ''
+}
+#sub_lunchmenu .webparty li a:hover {
+    color: #c27a34;
+    border-bottom: 4px solid #c27a34;
+    display: inline-block;
+}
+
+/* div : sub_luncheon  */
+#sub_luncheon {
+    width: 100%;
+    padding: 0 0 120px 0;
+    background: #f5f5f5;
+}
+.lunch_text {
+    width: 100%;
+    text-align: center; 
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif; 
+    line-height: 1.8;
+    padding: 100px 0 60px 0;   
+}
+.lunch_text img {max-width: 34px; margin: 0 auto; margin-bottom: 30px;}
+.lunch_text .subweb {display: block;}
+.lunch_text .submobile {display: none;}
+.lunch_text .txtk {font-size: 24px; margin-bottom: 10px;}
+.lunch_text .txte {font-size: 18px; color: #666;}
+
+.lunch_dadam {
+    width: 1720px; height: 1000px;   
+    box-sizing: border-box;
+    margin: 0 auto;   
+    margin-bottom: 60px;
+}
+.lunch_dadam .left {float: left; height: 100%;}
+.lunch_dadam .dadam_textarea {
+    float: left; width: 850px;
+    text-align: center;
+    padding: 195px 0;
+    background: #fff;
+    position: relative;
+}
+.lunch_dadam .dadam_textarea .dadam_title span {
+    font-family: 'Montaga', serif;
+    font-size: 22px;
+    color: #c27a34;
+    display: block;
+}
+.lunch_dadam .dadam_textarea .dadam_title {
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif; 
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+.lunch_dadam .dadam_textarea .price {
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif; 
+    font-size: 20px;
+    position: relative;
+    margin-bottom: 50px;
+}
+.lunch_dadam .dadam_textarea .price:after {
+   position: absolute;
+   width: 1px; height: 30px;
+   background: #ddd;   
+   margin: 24px auto;
+   content: '';
+   top: 30px; left: 50%;
+}
+.lunch_dadam .dadam_textarea ul {margin-top: 80px;}
+.lunch_dadam .dadam_textarea li {
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif; 
+    font-size: 22px;
+    line-height: 2.4;  
+}
+.lunch_dadam .dadam_textarea .download {
+    position: absolute;
+    top: 0; right: 0;
+    width: 100px; height: 100px;
+    background: #c27a34;     
+}
+.lunch_dadam .dadam_textarea .download img {width: 72%; text-align: center; padding: 13px;}
+
+.lunch_sodam {
+    width: 1720px; height: 1000px;   
+    box-sizing: border-box;   
+    margin: 0 auto;              
+}
+.lunch_sodam .sodam_textarea {
+    float: right; width: 850px; height: 610px;
+    text-align: center;
+    padding: 195px 0;
+    background: #fff;   
+    position: relative;
+}
+.lunch_sodam .sodam_textarea .sodam_title span {
+    font-family: 'Montaga', serif;
+    font-size: 22px;
+    color: #c27a34;
+    display: block;
+}
+.lunch_sodam .sodam_textarea .sodam_title {
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif; 
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+.lunch_sodam .sodam_textarea .price {
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif; 
+    font-size: 20px;
+    position: relative;
+    margin-bottom: 50px;
+}
+.lunch_sodam .sodam_textarea .price:after {
+   position: absolute;
+   width: 1px; height: 30px;
+   background: #ddd;   
+   margin: 24px auto;
+   content: '';
+   top: 30px; left: 50%;
+}
+.lunch_sodam .sodam_textarea ul {margin-top: 80px;}
+.lunch_sodam .sodam_textarea li {
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif; 
+    font-size: 22px;
+    line-height: 2.4;  
+}
+.lunch_sodam .sodam_textarea .download {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100px; height: 100px;
+    background: #c27a34;     
+}
+.lunch_sodam .sodam_textarea .download img {width: 72%; text-align: center; padding: 13px;}
+.lunch_sodam .right {float: right; height: 100%;}
+
+/* dinner */
+.dinner_hansang {
+    width: 1720px; height: 1380px;   
+    box-sizing: border-box;
+    margin: 0 auto;   
+    margin-bottom: 60px;
+}
+.dinner_hansang .left {float: left; height: 100%;}
+.dinner_hansang .hansang_textarea {
+    float: left; width: 850px;
+    text-align: center;
+    padding: 332px 0;
+    background: #fff;
+    position: relative;
+}
+.dinner_hansang .hansang_textarea .hansang_title span {
+    font-family: 'Montaga', serif;
+    font-size: 22px;
+    color: #c27a34;
+    display: block;
+}
+.dinner_hansang .hansang_textarea .hansang_title {
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif; 
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+.dinner_hansang .hansang_textarea .price {
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif; 
+    font-size: 20px;
+    position: relative;
+    margin-bottom: 50px;
+}
+.dinner_hansang .hansang_textarea .price:after {
+   position: absolute;
+   width: 1px; height: 30px;
+   background: #ddd;   
+   margin: 24px auto;
+   content: '';
+   top: 30px; left: 50%;
+}
+.dinner_hansang .hansang_textarea ul {margin-top: 80px;}
+.dinner_hansang .hansang_textarea li {
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif; 
+    font-size: 22px;
+    line-height: 2.4;  
+}
+.dinner_hansang .hansang_textarea .download {
+    position: absolute;
+    top: 0; right: 0;
+    width: 100px; height: 100px;
+    background: #c27a34;     
+}
+.dinner_hansang .hansang_textarea .download img {width: 72%; text-align: center; padding: 13px;}
+
+.dinner_special {
+    width: 1720px; height: 1380px;   
+    box-sizing: border-box;   
+    margin: 0 auto;              
+}
+.dinner_special .right {float: right; height: 100%;}
+.dinner_special .special_textarea {
+    float: right; width: 850px;
+    text-align: center;
+    padding: 332px 0;
+    background: #fff;   
+    position: relative;
+}
+.dinner_special .special_textarea .special_title span {
+    font-family: 'Montaga', serif;
+    font-size: 22px;
+    color: #c27a34;
+    display: block;
+}
+.dinner_special .special_textarea .special_title {
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif; 
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+.dinner_special .special_textarea .price {
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif; 
+    font-size: 20px;
+    position: relative;
+    margin-bottom: 50px;
+}
+.dinner_special .special_textarea .price:after {
+   position: absolute;
+   width: 1px; height: 30px;
+   background: #ddd;   
+   margin: 24px auto;
+   content: '';
+   top: 30px; left: 50%;
+}
+.dinner_special .special_textarea ul {margin-top: 80px;}
+.dinner_special .special_textarea li {
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif; 
+    font-size: 22px;
+    line-height: 2.4;  
+}
+.dinner_special .special_textarea .download {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100px; height: 100px;
+    background: #c27a34;     
+}
+.dinner_special .special_textarea .download img {width: 72%; text-align: center; padding: 13px;}
+
+/* #dining */
+#dining {width: 100%; padding: 60px 0 100px 0;}
+#dining .wine span {
+    font-family: 'Montaga', serif;
+    font-size: 30px;
+    margin-right: 20px;
+}
+#dining .wine {
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif; 
+    font-size: 20px;
+    text-align: center;   
+}
+#dining .seasonal {
+    border: 1px solid #ddd;
+    margin: 60px 100px;
+    height: 120px;
+    padding: 70px 0;
+}
+.seasonal .seasonleft {
+    float: left;    
+    width: 20%;
+    margin: 20px 80px 0 8%;       
+}
+.seasonal .seasonleft .seasontitle span {    
+    font-family: 'Montaga', serif;
+    font-size: 20px;
+    color: #c27a34;
+    display: block;   
+    line-height: 1.5; 
+    font-weight: 600;
+}
+.seasonal .seasonleft .seasontitle {
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif; 
+    font-size: 32px;
+    font-weight: 500;    
+}
+.seasonal .seasonright {
+    float: left;
+    width: 55%;
+    margin-left: 5%;  
+    position: relative;    
+}
+.seasonal .seasonright:before {
+    position: absolute;
+    width: 1px; height: 130px;
+    top: 0; left: -100px;
+    content: '';
+    background: #ddd;
+}
+.seasonal .seasonright li img {color: #c27a34;}
+.seasonal .seasonright .res {
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif; 
+    font-size: 18px;
+    position: relative;
+    margin: 0 0 10px 0;       
+}
+.seasonal .seasonright .res:before {
+    position: absolute;
+    width: 7px; height: 7px;
+    background: #c27a34;
+    border-radius: 50%;
+    content: '';
+    top: 10px; left: -17px;   
+}
+.seasonal .seasonright li:last-child {
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif; 
+    font-size: 16px;
+    color: #666;
+    margin: 10px 0 0 -17px;
+    line-height: 1.5;
+}
+/* wedding / party */
+/* div : party */
+#party {
+    width: 100%;
+    padding: 0 0 120px 0;  
+}
+.party_text {
+    width: 100%;
+    text-align: center; 
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif; 
+    line-height: 1.5;
+    padding: 100px 0 60px 0;       
+}
+.party_text .party_title span {font-size: 34px; display: block; margin-bottom: 10px;}
+.party_text .party_title {font-size: 20px; position: relative; margin-bottom: 90px;}
+.party_text .party_title:after {
+    position: absolute;
+    width: 1px; height: 30px;
+    background: #ddd;   
+    margin: 24px auto;
+    content: '';
+    top: 90px; left: 50%;    
+}
+.party_text .txtk {font-size: 22px; margin: 20px 0; font-family: 'Noto Sans KR', sans-serif;}
+.party_text .txte {font-size: 16px; color: #666;}
+
+.event {
+    width: 720px; 
+    margin: 0 auto;   
+    box-sizing: border-box;    
+    overflow: hidden;
+    margin-bottom: 60px;
+}
+.event li {
+    float: left;
+    width: 240px; height: 140px;
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif; 
+    font-size: 20px;
+    text-align: center;   
+}
+.event li img {height: 50px;}
+.event li span {display: block; padding: 30px 0;}
+
+.course {width: 1000px; margin: 0 auto;}
+.course li {overflow: hidden; letter-spacing: -1px;}
+.course .menuname {
+    float: left; width: 270px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 22px; padding: 30px 0 0 30px;    
+    position: relative;  
+}
+.course .menuname:after {
+    position: absolute;
+    top: 0; left: 0;
+    width: 1000px; height: 1px;
+    background: #ccc;
+    content: '';
+}
+.course .example {
+    float: left; width: 70%;
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif; 
+    font-size: 18px; padding: 30px 0 30px 0;    
+}
+.course .example p {margin-bottom: 14px;}
+
+/* div : customized */
+#customized {width: 100%; background: #f5f5f5; padding: 100px 0;}
+#customized .custominner {width: 720px; margin: 0 auto;}
+.custom_text {width: 100%; text-align: center;}
+.custom_text .custom_title span {
+    font-family: 'Montaga', serif;
+    font-size: 22px;
+    color: #c27a34; 
+    display: block;
+}
+.custom_text .custom_title {
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif; 
+    font-size: 34px; 
+    margin-bottom: 10px;
+}
+.custom_text .price {
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif; 
+    font-size: 20px;
+    text-align: center;
+    position: relative; margin-bottom: 80px; 
+}
+.custom_text .price:after {
+    position: absolute;
+    width: 1px; height: 30px;
+    top: 50px; left: 50%;
+    content: '';
+    background: #ddd;  
+}
+.custom_text .txtk {
+    font-family: 'Noto Sans KR', sans-serif; 
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+.custom_text .txte {
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif; 
+    font-size: 16px;
+    color: #666;
+}
+.customfour {
+    width: 720px; 
+    margin: 0 auto;   
+    box-sizing: border-box;    
+    overflow: hidden;
+    margin-top: 60px;
+}
+.customfour li {
+    float: left;
+    width: 240px; height: 140px;
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif; 
+    font-size: 20px;
+    text-align: center;   
+}
+.customfour li img {height: 50px;}
+.customfour li span {display: block; padding: 30px 0;}
+
+/* footer */
+footer {width: 100%; background: #383431; height: 360px;}
+footer .inner {width: 100%; margin: 0 auto; box-sizing: border-box; padding: 60px 0 100px 0; position: relative;}
+.flogo {   
+    float: left;  
+    width: calc(15% - 60px); padding-left: 60px; 
+      
+}
+/* .flogo img {width: 20%;} */
+.foot_des {    
+    float: left;
+    width: 40%; margin-left: 280px;
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif; 
+    font-size: 16px; 
+    line-height: 1.7;  
+    /* background: lightgray; */
+}
+.foot_des .deskmob {display: none;}
+.foot_des .desemob {display: none;}
+.foot_des .labelmob {display: none;}
+
+.foot_des .deskweb {  
+    display: block;  
+    color: #CEC0B5;
+}
+.foot_des .deseweb {
+    display: block;
+    color: #AA988A; margin-bottom: 20px;
+}
+.foot_des .labelweb {
+    display: block;
+    color: #CEC0B5;  margin-bottom: 20px;
+} 
+.foot_des .copyright {
+    color: #786659;
+}
+
+.etc {width: 20%; float: left; position: relative; margin-left: 130px;}
+.etc .final {
+    position: absolute;
+    top: 0; left: 0;   
+}
+.etc .finsta {
+    position: absolute;
+    top: 0; left: 70px;
+} 
+.etc .family .btn {
+    position: relative;
+    top: 0; left: 150px;
+    width: 170px; height: 50px;
+    background: #c27a34;
+    border-radius: 30px;
+    color: white;
+    font-size: 18px;    
+    padding-left: 30px;
+    line-height: 50px;
+}
+.etc .family .btn.active {
+    border-radius: 30px 30px 0 0;    
+}
+.etc .family .open {
+    position: relative;
+    top: 0; left: 150px;
+    width: 200px; height: 50px;
+    background: #c27a34;
+    /* border-radius: 30px; */
+    color: white;
+    font-size: 18px;
+    /* padding-left: 50px; */
+    text-align: center;
+    line-height: 50px;
+    border-radius: 0 0 30px 30px; 
+    display: none;    
+}
+.etc .family .open.active {    
+    display: block;
+}
+.etc .family .down {
+    position: absolute;
+    top: 20px; left: 150px; 
+}
+.etc .family .down.active {
+    position: absolute;
+    top: 20px; left: 150px; 
+    transform: rotateY(180deg);
+}

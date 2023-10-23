@@ -1,0 +1,755 @@
+@charset "utf-8";
+@import url('font.css');
+@import url('all.min.css');
+
+#wrap {width: 100%;}
+#banner {
+    width: 100%; height: 580px;
+    background: url(../img/room_benner.jpg);    
+}
+/* header */
+header {
+    height: 132px;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    transition: all 0.3s;
+}
+header .logo {
+    background: url(../img/logo_on.png) no-repeat center;
+    width: 20%; height: 132px; line-height: 132px;
+    position: absolute; top: 0; left: 0;  
+}
+header .gnb {
+    position: fixed;
+    width: 60%; height: 132px;  
+    top: 0; left: 360px;
+    /* left: 50%; transform: translateX(-50%); -> 모바일에서 50%이동상태로 뜸 */
+}
+/* header .gnb > ul {display: flex; align-items: center;} ->header위치 gnb li 고정, 일케쓰면 예쁨(madein쌤) 모바일에서 .gnb flex해제가 잘 되지 않으므로 flex->float으로 다시 변경 */
+
+header .gnb > ul > li {
+    position: relative; /* !:.sub li */
+    /* display: flex;
+    flex: 1; */    
+    float: left;    
+}
+/* header .gnb > ul > li:hover .sub {display: block;} */
+/* header .gnb > ul > li:hover .bg_gnb {display: block;} */
+header .gnb > ul > li > a {
+    color: white;
+    font-size: 20px; text-align: center;
+    line-height: 132px;
+    padding: 0 50px;
+    display: block;
+    transition: 0.1s;
+}
+header .gnb > ul > li:hover .sub ul {display: block;}
+header .gnb > ul > li > a:last-child {margin-right: 0;}
+header .gnb > ul > li:hover > a {color: #c27a34;}
+header .sub {
+    position: absolute;
+    top: 133px; left: 0;
+    width: 100%; height: auto;    
+    display: none;
+    transition: 0.1s;
+}
+/* header .sub > ul {
+    position: absolute;
+    width: 100%; height: 200px;   
+    top: 0; left: -27px; right: 0;
+    padding-top: 20px;
+    display: none;
+} */
+header .sub > ul > li {
+    width: 150%; /* 1 */    
+    position: relative; /* 3:absolute-위로 올라가서 나머지만 나타남, relative일때 전부 출력 */
+    left: -45px; /* 2 */    
+    line-height: 2.5; 
+    text-align: center;
+}
+header .sub ul > li > a {
+    color: #222; text-align: center;
+    font-size: 17px;   
+}
+header .sub ul > li a:hover {
+    border-bottom: 1px solid #222;
+    transition: all 0.3s; 
+}/* 1013 */
+header .menu_right_web {
+    display: block;
+    background: url(../img/icon_hamw.png) no-repeat;
+    position: fixed;
+    top: 40px; right: 0;
+    width: 5%; height: 132px; line-height: 132px;
+    z-index: 100;
+}
+header .menu_right_mob {display: none;}
+.bg_gnb {
+    position: fixed;
+    top: 101px; left: 0;
+    width: 100%; height: 240px;
+    background: #fff; 
+    z-index: 3; /* z-index:100 */
+    display: none;
+    transition: all 0.3s;
+}
+
+/* header.touch->on - heignt: 132px */
+header.on {    
+    background: white;
+    border-bottom: 1px solid #eee; /* ! */
+}
+.on .logo {
+    background: url(../img/logo.png) no-repeat center;
+    height: 132px; line-height: 132px;
+    top: 0; left: 0; 
+}
+.on .gnb > ul {background: white;}
+.on .gnb > ul > li {height: 132px; line-height: 132px;}
+.on .gnb > ul > li > a {color: black;}
+.on .menu_right_web {
+    display: block;
+    background: url(../img/icon_hamb.png) no-repeat;
+    top: 40px; right: 0;
+    width: 5%; height: 132px; line-height: 132px;
+}
+.on .menu_right_mob {display: none;}
+
+/* header.on->touch - height: 100px */
+header.touch {
+    background: white;
+    height: 100px; line-height: 100px;    
+}
+header.touch .logo {
+    background: url(../img/logo.png) no-repeat center;
+    width: 20%; height: 100px; line-height: 100px;
+    top: 0; left: 0;  
+}
+header.touch .gnb {height: 100px; line-height: 100px;}
+header.touch .gnb > ul > li {height: 100px; line-height: 100px;}
+header.touch .gnb > ul > li > a {
+    display: block;
+    color: black; 
+    line-height: 100px;    
+}
+.touch .gnb .sub {
+    top: 100px; /* height: auto; 기능이 나타나지X */
+}
+/* .on .bg_gnb {display: block;} */
+.touch .menu_right_web {
+    display: block;
+    background: url(../img/icon_hamb.png) no-repeat;
+    top: 30px; right: 0;
+    width: 5%; height: 100px; line-height: 100px;
+}
+.touch .menu_right_mob {display: none;}
+/* header.on .gnb > ul > li:hover .bg_gnb {display: block;} */
+/* header.on .bg_gnb {
+    display: none;
+    position: absolute;
+    top: 101px; left: 0; right: 0;
+    width: 100%; height: 500px;
+    background: white; 
+    z-index: 1000;   
+    transition: all 0.3s;
+} */
+header.touch {
+    display: fixed;
+    height: 100px;
+    line-height: 100px;
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+}/* oneul.css와 다른점 header.fixed {} */
+
+/* modalBox */
+.modalBox {
+    width: 100vw; height: 100vh;
+    background: #383431;
+    position: relative;
+    display: none;
+    z-index: 1000;
+}
+.btnClose {
+    position: absolute;
+    top: 100px; right: 100px;
+}
+.open {display: block;}
+#sitemap {
+    width: 1000px; height: 100vh;
+    margin: 0 auto; padding: 140px 0;
+    box-sizing: border-box;
+}
+#sitemap .btnClose {
+    position: absolute;
+    top: 60px; right: 60px;
+}
+#sitemap .menu {
+    width: 1200px;
+    margin-bottom: 100px;
+}
+#sitemap .menu h1 img {
+    display: block;
+    margin: 0 auto 200px; 
+}
+#sitemap .menu > ul > li {
+    position: relative;
+    float: left;
+    width: calc(100% / 5);
+}
+#sitemap .menu > ul > li > a {
+    float: left;
+    width: 100%;
+    font-family: "Montaga", serif;  
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+    display: block;
+    box-sizing: border-box;
+    padding: 20px 60px;
+}
+#sitemap .menu ul li ul {
+    position: absolute;
+    top: 80px; left: 0;
+    width: 100%;
+    padding: 10px 0;
+}
+#sitemap .menu > ul ul li a {
+    display: block;
+    font-family: "Montserrat", "Noto Sans KR", sans-serif;
+    font-size: 20px;
+    color: #dac5b6;
+    text-align: center;
+    line-height: 40px;
+}
+#sitemap .menu > ul > li > ul > li > a:hover {color: white;}
+#sitemap .flogo {
+    width: 1000px;
+    margin: 200px auto;
+    text-align: center;
+}
+
+/* banner : header */
+#banner .inner {    
+    width: 100%; height: 448px;
+    position: absolute;
+    top: 133px; left: 0;
+  /*   background: lightgray;     */
+}
+#banner .inner .ban_textarea {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+}
+#banner .inner .t1 {
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif; 
+    font-size: 16px;   
+    line-height: 1.5;
+}
+#banner .inner .t2 {
+    font-family: 'Montaga', serif;
+    font-size: 60px;
+    line-height: 1.5;
+}
+
+/* Room : Reception */
+/* div : sub_reception */
+#sub_reception {
+    width: 100%; height: 84px;
+    border-bottom: 1px solid #ddd;
+}
+#sub_reception ul {
+    width: 1080px; margin: 0 auto;
+}
+#sub_reception .webrecep {display: block;}
+#sub_reception .mobrecep {display: none;}
+#sub_reception .webrecep li {
+    float: left;
+    width: 150px; 
+    line-height: 80px;
+    text-align: center;
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif; 
+    font-size: 22px; position: relative;
+}
+#sub_reception .webrecep li:first-child {color: #c27a34;}
+#sub_reception .webrecep li:first-child a:after {
+    position: absolute;
+    top: 80px; left: 64px;
+    width: 22px; height: 4px;
+    background: #c27a34;
+    content: ''
+}
+#sub_reception .webrecep li a:hover {
+    color: #c27a34;
+    border-bottom: 4px solid #c27a34;
+    display: inline-block;
+}
+#sub_reception .webrecep li:last-child {width: 180px;}
+
+/* div : reception */
+#reception {width: 100%; padding: 100px 0;}
+#reception .receptname {width: 100%; text-align: center;}
+.receptname .fl_title span {
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif; 
+    font-size: 16px;
+    color: #c27a34;
+    display: block;
+}
+.receptname .fl_title {
+    font-family: 'Montaga', serif;
+    font-size: 52px;
+}
+.swiper.receptionSwiper {    
+    top: 0; left: 0;
+    width: 1700px; height: 780px;
+    overflow: hidden;
+    padding: 100px 0;    
+    position: relative;
+}
+.swiper-wrapper .swiper-slide.re1 {
+    background: url(../img/room01_01b.jpg) no-repeat;
+    width: 1700px; height: 100%; position: relative;
+}
+.swiper-wrapper .swiper-slide.re2 {background: url(../img/room01_02b.jpg) no-repeat;}
+.swiper-wrapper .swiper-slide.re3 {background: url(../img/room01_03b.jpg) no-repeat;}
+.swiper.receptionSwiper .swiper-button-prev:after, .swiper-button-next:after {display: none;}
+.swiper.receptionSwiper .swiper-button-prev {    
+    position: absolute;
+    top: 812px; left: 1520px;
+    width: 90px; height: 90px;   
+    background: #fff;   
+}
+.swiper.receptionSwiper .swiper-button-next {
+    position: absolute;
+    top: 812px; right: 0;
+    width: 90px; height: 90px;    
+    background: #fff;   
+}
+.floordesc .fl_desc span {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 24px;
+    display: block;
+    margin-bottom: 20px;
+    color: #000;
+}
+.floordesc .fl_desc {
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif; 
+    font-size: 16px;
+    color: #666;   
+    text-align: center;
+}
+
+/* Room : Private Dinng Room */
+/* div : sub_private */
+#sub_private {
+    width: 100%; height: 84px;
+    border-bottom: 1px solid #ddd;
+}
+#sub_private ul {
+    width: 1080px; margin: 0 auto;
+}
+#sub_private .webprivate {display: block;}
+#sub_private .mobprivate {display: none;}
+
+#sub_private .webprivate li {
+    float: left;
+    width: 150px; 
+    line-height: 80px;
+    text-align: center;
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif; 
+    font-size: 22px; position: relative;
+}
+#sub_private .webprivate li a:hover {
+    border-bottom: 4px solid #c27a34;
+    display: inline-block;
+}
+#sub_private .webprivate li:nth-child(3) a{
+    color: #c27a34;
+}
+#sub_private .webprivate li:nth-child(3) a:after {
+    position: absolute;
+    top: 80px; left: 61px;
+    width: 26px; height: 4px;
+    background: #c27a34;
+    content: ''
+}
+#sub_private .webprivate li:last-child {width: 180px;}
+#sub_private .webprivate li a:hover {
+    color: #c27a34;
+}
+/* div : private */
+#private {width: 100%; padding: 100px 0;}
+#private .privatename {width: 100%; text-align: center;}
+.privatename .pr_title span {
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif; 
+    font-size: 16px;
+    color: #c27a34;
+    display: block;
+}
+.privatename .pr_title {
+    font-family: 'Montaga', serif;
+    font-size: 52px;
+}
+.swiper.privateSwiper {    
+    top: 0; left: 0;
+    width: 1700px; height: 780px;
+    overflow: hidden;
+    padding: 100px 0;    
+    position: relative;
+}
+.swiper-wrapper .swiper-slide.pr1 {
+    background: url(../img/room02_01b.jpg) no-repeat;
+    width: 1700px; height: 100%; position: relative;
+}
+.swiper-wrapper .swiper-slide.pr2 {background: url(../img/room02_02b.jpg) no-repeat;}
+.swiper-wrapper .swiper-slide.pr3 {background: url(../img/room02_03b.jpg) no-repeat;}
+.swiper-wrapper .swiper-slide.pr4 {background: url(../img/room02_04b.jpg) no-repeat;}
+.swiper.privateSwiper .swiper-button-prev:after, .swiper-button-next:after {display: none;}
+.swiper.privateSwiper .swiper-button-prev {    
+    position: absolute;
+    top: 812px; left: 1520px;
+    width: 90px; height: 90px;   
+    background: #fff;   
+}
+.swiper.privateSwiper .swiper-button-next {
+    position: absolute;
+    top: 812px; right: 0;
+    width: 90px; height: 90px;    
+    background: #fff;   
+}
+.floordesc .fl_descweb {display: block;}
+.floordesc .fl_descmob {display: none;}
+.floordesc .fl_descweb span {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 24px;
+    display: block;
+    margin-bottom: 20px;
+    color: #000;
+}
+.floordesc .fl_descweb {
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif; 
+    font-size: 16px;
+    color: #666;   
+    text-align: center;
+}
+
+/* Room : Hall */
+/* div : sub_hall */
+#sub_hall {
+    width: 100%; height: 84px;
+    border-bottom: 1px solid #ddd;
+}
+#sub_hall ul {
+    width: 1080px; margin: 0 auto;
+}
+#sub_hall .webhall {display: block;}
+#sub_hall .mobhall {display: none;}
+
+#sub_hall .webhall li {
+    float: left;
+    width: 150px; 
+    line-height: 80px;
+    text-align: center;
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif; 
+    font-size: 22px; position: relative;
+}
+#sub_hall .webhall li a:hover {
+    border-bottom: 4px solid #c27a34;
+    display: inline-block;
+}
+#sub_hall .webhall li:nth-child(5) a:after {
+    position: absolute;
+    top: 80px; left: 61px;
+    width: 26px; height: 4px;
+    background: #c27a34;
+    content: ''
+}
+#sub_hall .webhall li:nth-child(5) {
+    color: #c27a34;
+}
+#sub_hall .webhall li:last-child {width: 180px;}
+#sub_hall .webhall li a:hover {
+    color: #c27a34;
+}
+/* div : hall */
+#hall {width: 100%; padding: 100px 0;}
+#hall .hallname {width: 100%; text-align: center;}
+.hallname .ha_title span {
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif; 
+    font-size: 16px;
+    color: #c27a34;
+    display: block;
+}
+.hallname .ha_title {
+    font-family: 'Montaga', serif;
+    font-size: 52px;
+}
+.swiper.hallSwiper {    
+    top: 0; left: 0;
+    width: 1700px; height: 780px;
+    overflow: hidden;
+    padding: 100px 0;    
+    position: relative;
+}
+.swiper-wrapper .swiper-slide.ha1 {
+    background: url(../img/room03_01b.jpg) no-repeat;
+    width: 1700px; height: 100%; position: relative;
+}
+.swiper-wrapper .swiper-slide.ha2 {background: url(../img/room03_02b.jpg) no-repeat;}
+.swiper-wrapper .swiper-slide.ha3 {background: url(../img/room03_03b.jpg) no-repeat;}
+.swiper-wrapper .swiper-slide.ha4 {background: url(../img/room03_04b.jpg) no-repeat;}
+.swiper-wrapper .swiper-slide.ha5 {background: url(../img/room03_05b.jpg) no-repeat;}
+.swiper-wrapper .swiper-slide.ha6 {background: url(../img/room03_06b.jpg) no-repeat;}
+.swiper.hallSwiper .swiper-button-prev:after, .swiper-button-next:after {display: none;}
+.swiper.hallSwiper .swiper-button-prev {    
+    position: absolute;
+    top: 812px; left: 1520px;
+    width: 90px; height: 90px;   
+    background: #fff;   
+}
+.swiper.hallSwiper .swiper-button-next {
+    position: absolute;
+    top: 812px; right: 0;
+    width: 90px; height: 90px;    
+    background: #fff;   
+}
+.floordesc .fl_descweb {display: block;}
+.floordesc .fl_desc2web {display: block;}
+.floordesc .fl_descmob {display: none;}
+.floordesc .fl_desc2mob {display: none;}
+
+.floordesc .fl_descweb span {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 24px;
+    display: block;
+    margin-bottom: 20px;
+    color: #000;
+}
+.floordesc .fl_descweb {
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif; 
+    font-size: 18px;
+    color: #666;   
+    text-align: center;
+}
+.floordesc .fl_desc2web {
+    font-family: 'Noto Sans KR', sans-serif;   
+    font-size: 18px;
+    margin-bottom: 20px;   
+    text-align: center;
+}
+
+/* Room : Wedding / Party */
+/* div : sub_wedding */
+#sub_wedding {
+    width: 100%; height: 84px;
+    border-bottom: 1px solid #ddd;
+}
+#sub_wedding ul {
+    width: 1080px; margin: 0 auto;
+}
+#sub_wedding .webwedding {display: block;}
+#sub_wedding .mobwedding {display: none;}
+
+#sub_wedding .webwedding li {
+    float: left;
+    width: 150px; 
+    line-height: 80px;
+    text-align: center;
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif; 
+    font-size: 22px; position: relative;
+}
+#sub_wedding .webwedding li a:hover {
+    border-bottom: 4px solid #c27a34;
+    display: inline-block;
+}
+#sub_wedding .webwedding li:nth-child(7) a:after {
+    position: absolute;
+    top: 80px; left: 2px;
+    width: 180px; height: 4px;
+    background: #c27a34;
+    content: ''
+}
+#sub_wedding .webwedding li:nth-child(7) {
+    color: #c27a34;
+}
+#sub_wedding .webwedding li:last-child {width: 180px;}
+#sub_wedding .webwedding li a:hover {
+    color: #c27a34;
+}
+/* div : wedding */
+#wedding {width: 100%; padding: 100px 0;}
+#wedding .wedname {width: 100%; text-align: center;}
+.wedname .we_title {
+    font-family: 'Montaga', serif;
+    font-size: 52px;
+}
+.swiper.weddingSwiper {    
+    top: 0; left: 0;
+    width: 1700px; height: 780px;
+    overflow: hidden;
+    padding: 100px 0;    
+    position: relative;
+}
+.swiper-wrapper .swiper-slide.we1 {
+    background: url(../img/room04_01b.jpg) no-repeat;
+    width: 1700px; height: 100%; position: relative;
+}
+.swiper-wrapper .swiper-slide.we2 {background: url(../img/room04_02b.jpg) no-repeat;}
+.swiper-wrapper .swiper-slide.we3 {background: url(../img/room04_03b.jpg) no-repeat;}
+.swiper-wrapper .swiper-slide.we4 {background: url(../img/room04_04b.jpg) no-repeat;}
+.swiper-wrapper .swiper-slide.we5 {background: url(../img/room04_05b.jpg) no-repeat;}
+.swiper-wrapper .swiper-slide.we6 {background: url(../img/room04_06b.jpg) no-repeat;}
+.swiper-wrapper .swiper-slide.we7 {background: url(../img/room04_07b.jpg) no-repeat;}
+.swiper-wrapper .swiper-slide.we8 {background: url(../img/room04_08b.jpg) no-repeat;}
+.swiper-wrapper .swiper-slide.we9 {background: url(../img/room04_09b.jpg) no-repeat;}
+.swiper-wrapper .swiper-slide.we10 {background: url(../img/room04_10b.jpg) no-repeat;}
+.swiper-wrapper .swiper-slide.we11 {background: url(../img/room04_11b.jpg) no-repeat;}
+.swiper.weddingSwiper .swiper-button-prev:after, .swiper-button-next:after {display: none;}
+.swiper.weddingSwiper .swiper-button-prev {    
+    position: absolute;
+    top: 812px; left: 1520px;
+    width: 90px; height: 90px;   
+    background: #fff;   
+}
+.swiper.weddingSwiper .swiper-button-next {
+    position: absolute;
+    top: 812px; right: 0;
+    width: 90px; height: 90px;    
+    background: #fff;   
+}
+.floordesc .fl_desc span {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 24px;
+    display: block;
+    margin-bottom: 20px;
+    color: #000;
+}
+.floordesc .fl_desc {
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif; 
+    font-size: 18px;
+    color: #666;   
+    text-align: center;
+}
+.dining {width: 100%; background: #f5f5f5; padding: 100px 0; margin-top: 100px;}
+.dining .dininner {background: #f5f5f5; padding-bottom: 200px;}
+.dining li:first-child {width: 50%;}
+.dining li {float: left; width: 25%; text-align: center;}
+.dining .din_title span {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 26px;
+    display: block;
+}
+.dining .din_title {
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif; 
+    font-size: 14px;
+    color: #666;
+    padding: 10px 0;
+}
+.dining .din_desc {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 16px;
+    padding-bottom: 100px;
+}
+.dining .mid {position: relative;}
+.dining .mid .din_descmid:before {
+    position: absolute;
+    top: 0; left: 0;
+    width: 1px; height: 200px;
+    background: #ddd;
+    content: '';
+}  
+.dining .mid .din_descmid:after {
+    position: absolute;
+    top: 0; right: 0;
+    width: 1px; height: 200px;
+    background: #ddd;
+    content: '';
+}  
+
+/* footer */
+footer {width: 100%; background: #383431; height: 360px;}
+footer .inner {width: 100%; margin: 0 auto; box-sizing: border-box; padding: 60px 0 100px 0; position: relative;}
+.flogo {   
+    float: left;  
+    width: calc(15% - 60px); padding-left: 60px;       
+}
+/* .flogo img {width: 20%;} */
+.foot_des {
+    float: left;
+    width: 40%; margin-left: 280px;
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif; 
+    font-size: 16px; 
+    line-height: 1.7;  
+    /* background: lightgray; */
+}
+.foot_des .deskmob {display: none;}
+.foot_des .desemob {display: none;}
+.foot_des .labelmob {display: none;}
+
+.foot_des .deskweb {   
+    display: block; 
+    color: #CEC0B5;
+}
+.foot_des .deseweb {
+    display: block;
+    color: #AA988A; margin-bottom: 20px;
+}
+.foot_des .labelweb  {
+    display: block;
+    color: #CEC0B5;  margin-bottom: 20px;
+} 
+.foot_des .copyright {
+    color: #786659;
+}
+
+.etc {width: 20%; float: left; position: relative; margin-left: 130px;}
+.etc .final {
+    position: absolute;
+    top: 0; left: 0;   
+}
+.etc .finsta {
+    position: absolute;
+    top: 0; left: 70px;
+} 
+.etc .family .btn {
+    position: relative;
+    top: 0; left: 150px;
+    width: 170px; height: 50px;
+    background: #c27a34;
+    border-radius: 30px;
+    color: white;
+    font-size: 18px;    
+    padding-left: 30px;
+    line-height: 50px;
+}
+.etc .family .btn.active {
+    border-radius: 30px 30px 0 0;    
+}
+.etc .family .open {
+    position: relative;
+    top: 0; left: 150px;
+    width: 200px; height: 50px;
+    background: #c27a34;
+    /* border-radius: 30px; */
+    color: white;
+    font-size: 18px;
+    /* padding-left: 50px; */
+    text-align: center;
+    line-height: 50px;
+    border-radius: 0 0 30px 30px; 
+    display: none;    
+}
+.etc .family .open.active {    
+    display: block;
+}
+.etc .family .down {
+    position: absolute;
+    top: 20px; left: 150px; 
+}
+.etc .family .down.active {
+    position: absolute;
+    top: 20px; left: 150px; 
+    transform: rotateY(180deg);
+}

@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>o'neul : practice-edit</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">   
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/oneul.css">
+    <link rel="stylesheet" href="css/mobileIndex.css" media="all and (max-width: 414px)">    
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>    
+  </head>
+
+  <body>
+    <div id="wrap">
+      <header>
+        <!-- <a class="menu_right_mob"><span class="blind">모바일메뉴</span></a> -->
+
+        <a href="index.html"><h1 class="logo"></h1></a>
+        <div class="gnb">
+          <ul>
+            <li><a href="index.html">o'neul</a></li>
+            <li><a href="menu_1f.html">Menu</a>
+              <div class="sub">
+                <ul>
+                  <li><a href="menu_1f.html">Luncheon</a></li>
+                  <li><a href="menu_2f.html">Dinner</a></li>
+                  <li><a href="menu_3f.html">Wedding/Party</a></li>
+                </ul>
+              </div>
+            </li>
+            <li><a href="#people">People</a></li>
+            <li>
+              <a href="room_1f.html">Room</a>
+              <div class="sub">
+                <ul>
+                  <li><a href="room_1f.html">Reception</a></li>
+                  <li><a href="room_2f.html">Private Dining Room</a></li>
+                  <li><a href="room_3f.html">Hall</a></li>                
+                  <li><a href="room_4f.html">Wedding / Party</a></li>
+                </ul>
+              </div>
+            </li>
+            <li><a href="#social">Social</a></li>
+          </ul>
+        </div>
+        <div class="menu_right_web"></div> 
+        <div class="menu_right_mob"></div>       
+
+        <div class="modalBox">
+          <div id="sitemap">
+            <div class="btnClose">
+              <img src="img/icon_menu_close.png" alt="">
+            </div>
+
+            <div class="menu">
+              <h1><a href="index.html"><img src="img/logo_on.png" alt=""></a></h1>
+              <ul>
+                <li><a href="index.html">o'neul</a></li>
+                <li>
+                  <a href="menu_1f.html">Menu</a>
+                  <ul>
+                    <li><a href="menu_1f.html">Luncheon</a></li>
+                    <li><a href="menu_2f.html">Dinner</a></li>
+                    <li><a href="menu_3f.html">Wedding / Party</a></li>
+                  </ul>
+                </li>
+                <li><a href="index.html#people">People</a></li>
+                <li>
+                  <a href="room_1f.html">Room</a>
+                  <ul>
+                    <li><a href="room_1f.html">Reception</a></li>
+                    <li><a href="room_2f.html">private Dining Room</a></li>
+                    <li><a href="room_3f.html">Hall</a></li>
+                    <li><a href="room_4f.html">Wedding / Party</a></li>
+                  </ul>
+                </li>
+                <li><a href="#social">Social</a></li>
+              </ul>
+            </div>
+
+            <div class="flogo"><img src="img/logo_f.png" alt=""></div>
+          </div>
+        </div>
+      </header>
+      <div class="bg_gnb"></div> 
+
+      <section>
+        <div class="swiper mainSwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide bg1">
+              <div class="text_area" data-aos="fade-down" data-aos-delay="200" data-aos-duration="1000">                
+                <img src="img/delicaci_tit2.png" alt="" />
+                <p class="t1">
+                  한끼에 담은 오늘의 가치, 레스토랑 오늘이 선보이는 프리미엄
+                  간편식 브랜드
+                </p>
+                <p class="t2">
+                  A premium home-meal brand made by 'restaurant o'neul
+                </p>
+                <!-- <p class="more">More</p> -->
+              </div>
+            </div>
+            <div class="swiper-slide bg2">
+              <div class="text_area" data-aos="fade-down" data-aos-delay="200" data-aos-duration="1000">
+                <p class="t0">Restaurant o'neul</p>
+                <p class="t1">
+                  가장 풍요롭고 생생한 시간, <br> 오늘을 주제로 한 전통 한식 다이닝
+                </p>
+                <p class="t2">
+                  Restaurant o'neul is Korean dining inspired by the most
+                  fulfilling and vivid time, 'today'.
+                </p>
+              </div>
+            </div>
+            <div class="swiper-slide bg3">
+              <div class="text_area" data-aos="fade-down" data-aos-delay="200" data-aos-duration="1000">
+                <p class="t0">Restaurant o'neul</p>
+                <p class="t1">
+                  가장 풍요롭고 생생한 시간, <br> 오늘을 주제로 한 전통 한식 다이닝
+                </p>
+                <p class="t2">
+                  Restaurant o'neul is Korean dining inspired by the most
+                  fulfilling and vivid time, 'today'.
+                </p>
+              </div>
+            </div>
+            <div class="swiper-slide bg4">
+              <div class="text_area" data-aos="fade-down" data-aos-delay="200" data-aos-duration="1000">
+                <p class="t0">Restaurant o'neul</p>
+                <p class="t1">
+                  가장 풍요롭고 생생한 시간, <br> 오늘을 주제로 한 전통 한식 다이닝
+                </p>
+                <p class="t2">
+                  Restaurant o'neul is Korean dining inspired by the most
+                  fulfilling and vivid time, 'today'.
+                </p>
+              </div>
+            </div>
+            <div class="swiper-slide bg5">
+              <div class="text_area" data-aos="fade-down" data-aos-delay="200" data-aos-duration="1000">
+                <p class="t0">Restaurant o'neul</p>
+                <p class="t1">
+                  가장 풍요롭고 생생한 시간, <br> 오늘을 주제로 한 전통 한식 다이닝
+                </p>
+                <p class="t2">
+                  Restaurant o'neul is Korean dining inspired by the most
+                  fulfilling and vivid time, 'today'.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <!-- <div class="swiper-pagination"></div> -->
+        </div>
+      </section>
+      <!-- //section : swifer -->
+
+      <section>
+        <div id="value">
+          <div class="inner">
+            <div class="val_textarea_web" data-aos="fade-right"
+            data-aos-delay="200" data-aos-duration="1000">
+              <p class="val_title">
+                <span>Restaurant o'neul</span> o'neul Value
+              </p>
+              <p>
+                레스토랑 오늘에서 선보이는 우리 음식은 <!-- <br> -->
+                한국인의 정체성을 담고 있는 한식에 기반을 두고 있으며,
+                <!-- <br> -->우리 식 문화의 정통성을 지켜나가고 발전시켜 나가기 위해
+                <!-- <br> -->레스토랑 오늘만의 스타일로 재해석 한 메뉴를 제공합니다.
+              </p>
+              <p>
+                o'neul's dishes are inspired by Korean traditions and
+                techniques. <br />Here we offer our unique understanding of
+                authentic Korean cuisine, <br />introducing its true values
+                through each menu.
+              </p>
+            </div>
+            <div class="val_textarea_mob" data-aos="fade-right"
+            data-aos-delay="30" data-aos-duration="1000">
+              <p class="val_title">
+                <span>Restaurant o'neul</span> o'neul Value
+              </p>
+              <p>
+                레스토랑 오늘에서 선보이는 우리 음식은 한국인의 <br>정체성을 담고 있는 한식에 기반을 두고 있으며,
+                우리 식 <br>문화의 정통성을 지켜나가고 발전시켜 나가기 위해
+                <br> 레스토랑 오늘만의 스타일로 재해석 한 메뉴를 <br> 제공합니다.
+              </p>
+              <p>
+                o'neul's dishes are inspired by Korean traditions and <br> techniques. Here we offer our unique understanding <br> of
+                authentic Korean cuisine, introducing its true values <br>
+                through each menu.
+              </p>
+            </div>
+            <div data-aos="fade" data-aos-delay="1000">
+              <img src="img/mi_img_202306.jpg" alt="" class="val_pic">
+            </div>           
+          </div>
+        </div>
+
+        <div id="menu">
+          <div class="inner" data-aos="fade-up"
+          data-aos-anchor-placement="center-bottom" data-aos-duration="1000">
+            <p class="menu_title"><span>Restaurant o'neul</span> o'neul Menu</p>
+            <div class="menu_pic">
+              <ul>
+                <li class="menuup">
+                  <a href="menu_1f.html"><img src="img/2023_summer_1.jpg" alt=""></a>
+                  <p class="pic_title">Luncheon</p>
+                  <i class="xi-plus-circle"></i>
+                  <p class="smenua"><span>다담 차림</span> 78,000 KRW</p>
+                  <p class="smenub"><span>소담 차림</span> 65,000 KRW</p>
+                </li>
+                <li class="menuup">
+                  <a href="menu_2f.html"><img src="img/2023_summer_2.jpg" alt=""></a>
+                  <p class="pic_title">Dinner</p>
+                  <i class="xi-plus-circle"></i>
+                  <p class="smenua"><span>오늘 셰프 스페셜 한상</span> 220,000 KRW</p>
+                  <p class="smenub"><span>오늘 한상 차림</span> 160,000 KRW</p>
+                </li>
+                <li class="menuup">
+                  <a href="menu_3f.html"><img src="img/2023_summer_3.jpg" alt=""></a>
+                  <p class="pic_title">Banquet / Party</p>
+                  <i class="xi-plus-circle"></i>
+                  <p class="smenua"><span>맞춤 메뉴(Upon request)</span> 150,000 KRW~</p>                
+                </li>
+              </ul>              
+            </div>
+            <div class="swiper menuSwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide ms1">
+                  <div class="menu_swip">
+                    <a href="menu_1f.html"><img src="img/2023_summer_1.jpg" alt=""></a>
+                    <p class="pic_title">Luncheon</p>
+                    <i class="xi-plus-circle"></i>
+                    <p class="smenuo"><span>다담 차림</span> 78,000 KRW</p>
+                    <p class="smenup"><span>소담 차림</span> 65,000 KRW</p>
+                  </div>
+                </div>
+                <div class="swiper-slide ms2">
+                  <div class="menu_swip">
+                    <a href="menu_2f.html"><img src="img/2023_summer_2.jpg" alt=""></a>
+                    <p class="pic_title">Dinner</p>
+                    <i class="xi-plus-circle"></i>
+                    <p class="smenuq"><span>오늘 셰프 스페셜 한상</span> 220,000 KRW</p>
+                    <p class="smenup"><span>오늘 한상 차림</span> 160,000 KRW</p>
+                  </div>
+                </div>
+                <div class="swiper-slide ms3">
+                  <div class="menu_swip">
+                    <a href="menu_3f.html"><img src="img/2023_summer_3.jpg" alt=""></a>
+                    <p class="pic_title">Banquet / Party</p>
+                    <i class="xi-plus-circle"></i>
+                    <p class="smenuo"><span>맞춤 메뉴 (Upon request)</span> 150,000 KRW~</p>
+                  </div>          
+                </div>            
+                
+              </div>             
+            </div>
+
+
+
+          </div>
+        </div>
+        <!-- //div : menu -->
+
+        <div id="people">
+          <div class="inner">
+            <div class="pe_titlearea">
+              <p class="pe_title">
+                <span>Restaurant o'neul</span> o'neul People
+              </p>
+            </div>
+            <div class="head_web">
+              <img src="img/mp_img04.jpg" alt="" data-aos="fade-right" data-aos-duration="1000"/>
+              <div class="head_textarea" data-aos="fade-left" data-aos-duration="2000">
+                <p class="chef">Head Chef</p>
+                <p class="name"><span>서병호</span> 셰프</p>
+                <p class="engname">Seo Byung Ho</p>
+                <ul>
+                  <li>前 워커힐 조리팀 SK CLUB 소속</li>
+                  <li>前 그랜드 워커힐 '온달(Ondal)' 주방장</li>
+                  <li>前 가정식 한식 라온 오너 셰프</li>
+                </ul>
+              </div>
+            </div>
+            <div class="head_mob">
+              <img src="img/mp_img04_m.jpg" alt="" data-aos="fade-right" data-aos-duration="1000"/>
+              <div class="head_textarea" data-aos="fade-left" data-aos-duration="2000">
+                <p class="chef">Head Chef</p>
+                <p class="name"><span>서병호</span> 셰프</p>
+                <p class="engname">Seo Byung Ho</p>
+                <ul>
+                  <li>前 워커힐 조리팀 SK CLUB 소속</li>
+                  <li>前 그랜드 워커힐 '온달(Ondal)' 주방장</li>
+                  <li>前 가정식 한식 라온 오너 셰프</li>
+                </ul>
+              </div>
+            </div>
+            <div class="director_web">
+              <img src="img/mp_img02.jpg" alt="" data-aos="fade-left" data-aos-duration="1000"/>
+              <div class="di_textarea" data-aos="fade-right" data-aos-duration="2000"> 
+                <p class="chef">Director Chef</p>
+                <p class="name"><span>하영철</span> 셰프</p>
+                <p class="engname">Ha Yeongcheol</p>
+                <ul>
+                  <li>SK NEW SCHOOL 교장</li>
+                  <li>행복에프엔씨재단 식문화 사업본부 고문</li>
+                  <li>前 쉐라톤그랜드워커힐 총주방장</li>
+                </ul>
+              </div>
+            </div>
+            <div class="director_mob">
+                <img src="img/mp_img02_m.jpg" alt="" data-aos="fade-left" data-aos-duration="1000"/>
+                <div class="di_textarea" data-aos="fade-right" data-aos-duration="2000"> 
+                  <p class="chef">Director Chef</p>
+                  <p class="name"><span>하영철</span> 셰프</p>
+                  <p class="engname">Ha Yeongcheol</p>
+                  <ul>
+                    <li>SK NEW SCHOOL 교장</li>
+                    <li>행복에프엔씨재단 식문화 사업본부 고문</li>
+                    <li>前 쉐라톤그랜드워커힐 총주방장</li>
+                  </ul>
+                </div>            
+            </div>
+          </div>
+        </div>
+
+        <div id="hall">
+          <div class="inner" data-aos="fade-up" data-aos-duration="2000">
+            <div class="floorone">
+              <a href="room_1f.html">
+                <img src="img/mh_img01_bg.jpg" alt="">               
+                <div class="hall_textarea">
+                  <p class="hallname"><span>1F</span> Reception</p>
+                </div>
+              </a>
+            </div>
+            <div class="floorone_media">
+              <a href="room_1f.html">
+                <img src="img/mh_img01.jpg" alt="">
+                <div class="hall_textarea">
+                  <p class="hallname_media"><span>1F</span> Reception</p>
+                </div>
+              </a>
+            </div>          
+            <div class="floortwo">
+              <a href="room_2f.html">
+                <img src="img/mh_img02_bg.jpg" alt="">              
+                <div class="hall_textarea">
+                  <p class="hallname"><span>2F</span> Private Dining Room</p>
+                </div>
+              </a>
+            </div>
+            <div class="floortwo_media">
+              <a href="room_2f.html">
+                <img src="img/mh_img02.jpg" alt="">
+                <div class="hall_textarea">
+                  <p class="hallname_media"><span>2F</span> Private Dining Room</p>
+                </div>
+              </a>
+            </div>
+            <div class="floorthree">
+              <a href="room_3f.html">  
+                <div class="swiper hallSwiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide hall1">
+                      <div class="hall_textarea">
+                        <p class="hallname"><span>3F</span> Hall</p>
+                        <p class="hallstyle">
+                          레스토랑 오늘 3층은 야외 중정을 사이에 두고 2가지
+                          스타일의 다이닝 홀이 있습니다.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="swiper-slide hall2"></div>
+                    <div class="swiper-slide hall3"></div>
+                    <div class="swiper-slide hall4"></div>
+                    <div class="swiper-slide hall5"></div>
+                    <div class="swiper-slide hall6"></div>
+                    <div class="swiper-slide hall7"></div>
+                  </div>
+                  <div class="swiper-pagination"></div>
+                </div>
+              </a>
+            </div>
+            <div class="floorthree_media">
+              <a href="room_3f.html">
+                <img src="img/mh_img03.jpg" alt="">
+                <div class="hall_textarea">
+                  <p class="hallname_media"><span>3F</span> Hall</p>
+                </div>
+              </a>
+            </div>
+            <div class="events">
+              <a href="room_4f.html">
+                <img src="img/mh_img04_bg.jpg" alt="">     
+                <div class="hall_textarea">
+                  <p class="hallname"><span>Banquet/Party</span> Dining events</p>
+                </div>
+              </a>
+            </div>
+            <div class="events_media">
+              <a href="room_4f.html">                
+                <img src="img/mh_img04.jpg" alt="">
+                <div class="hall_textarea">
+                  <p class="hallname_media"><span>Banquet/Party</span> Dining events</p>
+                </div>                
+              </a>              
+            </div>
+          </div>
+        </div>
+
+        <div id="social">
+          <div class="inner" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="insta">             
+              <li class="firstli">
+                <span>
+                  <img src="img/mis_insta.png" alt="" />
+                  <a href="#">www.instagram.com/oneul_restaurant/</a>
+                </span>
+              </li>
+              <li class="instali">
+                <a href="#"><img src="img/social_2.jpg" alt=""></a>
+              </li>
+              <li class="instali">
+                <a href="#"><img src="img/social_3.jpg" alt=""></a>
+              </li>
+              <li class="instali">
+                <a href="#"><img src="img/social_4.jpg" alt=""></a>
+              </li>
+              <li class="instali">
+                <a href="#"><img src="img/social_5.jpg" alt=""></a>
+              </li>
+              <li class="instali">
+                <a href="#"><img src="img/social_6.jpg" alt=""></a>
+              </li>
+              <li class="instali">
+                <a href="#"><img src="img/social_7.jpg" alt=""></a>
+              </li>
+              <li class="instali">
+                <a href="#"><img src="img/social_8.jpg" alt=""></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="reservation">
+          <div class="inner" data-aos="fade-up" data-aos-duration="2000">
+            <div class="map">
+              <!-- <iframe src="http://t1.daumcdn.net/roughmap/imgmap/c18c5e38946d088198252375c13bcaeda90b64f27e20fda468a0732340b5e230"></iframe> -->
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.2161243602877!2d126.99355467596892!3d37.52640232642822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca2334769096d%3A0x73271800bf22d910!2z7ISc7Jq47Yq567OE7IucIOyaqeyCsOq1rCDsnqXrrLjroZwgNjAgMSA1NA!5e0!3m2!1sko!2skr!4v1690523021666!5m2!1sko!2skr"
+              ></iframe>
+              <span><img src="img/pin.png" alt=""></span>
+            </div>
+
+            <div class="reser">
+              <div class="parkpic">
+                <img src="img/mi_bg.jpg" alt="">
+                <p class="cal">
+                  <img src="img/icon_reservation.png" alt="" />Reservation
+                </p>
+              
+            
+
+                <div class="reser_textarea">
+                  <div class="top">
+                    <p class="parktxt">
+                      <span>레스토랑 오늘</span>Restaurant o'neul
+                    </p>
+                    <p class="add">
+                      04393 서울시 용산구 장문로 60(동빙고동 1-54) <br />60
+                      Jangmun-ro, Youngsan-gu, Seoul, Korea
+                    </p>
+                    <ul>
+                      <li>- 네비게이션 검색 시 : 동빙고동 1-54</li>
+                      <li>
+                        - 주차장(무료주차) : 레스토랑 오늘 레드부스 옆
+                        지상주차장 / 지하1층
+                      </li>
+                      <li>※ 점심시간에 한해 발렛 운영(이용료: 3,000원)</li>
+                      <li>※ 지상 주차장 장애인 주차장 앞 공간 주차불가</li>
+                    </ul>
+                    <hr />
+                  </div>
+                  <div class="middle">
+                    <img src="img/icon_tel.png" alt="">
+                    <ul>
+                      <li><span>Reservation</span> (+82) 02-792-1054</li>
+                      <li>
+                        레스토랑 오늘은 예약제로 운영되며 <br />17시 이후 당일
+                        예약은 받지 않습니다.
+                      </li>
+                    </ul>
+                    <hr />
+                  </div>
+                  <div class="bottom">
+                    <img src="img/icon_time.png" alt="">
+                    <p>
+                      <span>Luncheon</span> : 12:00 ~ 15:00
+                      <span>Dinner</span> : 18:00 ~ 22:00
+                    </p>
+                    <p>(일요일 휴무, Closed on Sunday)</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- // div : reservation -->
+      </section>
+
+      <footer>
+        <div class="inner">
+          <p class="flogo"><img src="img/logo_f.png" alt=""></p>
+          <div class="foot_des">
+            <ul>
+              <li class="deskweb">레스토랑 오늘은 한식문화의 가치를 연구하고 특별한 경험을 소개하기 위해 <br>
+                행복에프앤씨재단에서 운영하는 한식 다이닝 레스토랑입니다.</li>
+              <li class="deseweb">O'neul is a Korean dining restaurant operated by Happy F&C Foundation that strives to <br>research true values of Korean food culture and spread its unique and special experience.</li> 
+              <li class="deskmob">레스토랑 오늘은 한식문화의 가치를 연구하고 특별한 경험을 소개하기 위해 행복에프앤씨재단에서 운영하는 한식 다이닝 레스토랑입니다.</li>
+              <li class="desemob">O'neul is a Korean dining restaurant operated by Happy F&C Foundation that strives to research true values of Korean food culture and spread its unique and special experience.</li>                  
+              <li class="labelweb">상호명 : 재단법인 행복에프앤씨 (오늘 분사무소) | 사업자번호 : 106-82-15618 <br> 대표자명 : 안범환 | 주소 : 서울특별시 용산구 장문로 60(동빙고동)</li>
+              <li class="labelmob">상호명 : 재단법인 행복에프앤씨 (오늘 분사무소) <br> 사업자번호 : 106-82-15618 &nbsp;&nbsp;&nbsp; 대표자명 : 안범환 <br> 주소 : 서울특별시 용산구 장문로 60(동빙고동)</li>
+              <li class="copyright">Copyright © 2020 The Happiness food and culture foundation all right reserved.</li>
+            </ul>        
+          </div>
+          <div class="etc">
+            <img src="img/restaurantoneul_finalist.png" alt="" class="final">
+            <img src="img/insta.png" alt="" class="finsta">
+            <div class="family">
+              <p class="btn">Family Site <img src="img/icon_fad.png" alt="" class="down"></p>
+              <p class="open">행복에프앤씨재단</p>
+            </div>    
+          </div>    
+        </div>
+      </footer>
+    </div>
+
+    <script src="js/oneul.js"></script>
+    <script src="js/menu.js"></script>
+    <script>
+      /* mainSwiper */
+      var swiper = new Swiper(".mainSwiper", {
+        spaceBetween: 30,
+        effect: "fade",
+        loop: true,
+        type: "fraction",
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+      });     
+
+      /* menuSwiper */    
+      var swiper = new Swiper(".menuSwiper", {
+        loop: true,
+        navigation: {            
+            prevEl: ".swiper-button-prev",
+            nextEl: ".swiper-button-next",
+        },
+        autoplay: {
+              delay: 1500,
+              disableOnInteraction: false,
+        },
+      });
+
+      /* AOS */   
+      AOS.init();
+    </script>
+  </body>
+</html>
