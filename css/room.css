@@ -49,7 +49,7 @@ header .gnb > ul > li > a:last-child {margin-right: 0;}
 header .gnb > ul > li:hover > a {color: #c27a34;}
 header .sub {
     position: absolute;
-    top: 133px; left: 0;
+    top: 140px; left: 0;
     width: 100%; height: auto;    
     display: none;
     transition: 0.1s;
@@ -65,12 +65,13 @@ header .sub > ul > li {
     width: 150%; /* 1 */    
     position: relative; /* 3:absolute-위로 올라가서 나머지만 나타남, relative일때 전부 출력 */
     left: -45px; /* 2 */    
-    line-height: 2.5; 
+    line-height: 1.7; 
     text-align: center;
+    padding: 10px 0;
 }
 header .sub ul > li > a {
     color: #222; text-align: center;
-    font-size: 17px;   
+    font-size: 17px;     
 }
 header .sub ul > li a:hover {
     border-bottom: 1px solid #222;

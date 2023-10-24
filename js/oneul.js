@@ -78,7 +78,7 @@ $(function () {
     modalBox.classList.remove("open");
   };  
 
-  $(".text_area").animate({ marginTop: "100px" }, 800);
+  /* $(".text_area").animate({ marginTop: "100px" }, 800);
 
   let valTxt = document.querySelector(".val_textarea");
   $(valTxt).delay(1000).animate({ marginLeft: "200px" }, 800);
@@ -97,7 +97,7 @@ $(function () {
   $(heImg).delay(4000).animate({ marginLeft: "100px" }, 800);
   $(diImg).delay(4000).animate({ marginRight: "100px" }, 800);
   $(heText).delay(4000).animate({ marginLeft: "-100px" }, 800);
-  $(diText).delay(4000).animate({ marginRight: "-100px" }, 800);
+  $(diText).delay(4000).animate({ marginRight: "-100px" }, 800); */
 
   let hallUp = document.querySelector("#hall");
   $(hallUp).delay(5000).animate({ marginTop: "-100px" }, 800);

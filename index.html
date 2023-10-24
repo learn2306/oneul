@@ -96,7 +96,7 @@
         <div class="swiper mainSwiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide bg1">
-              <div class="text_area" data-aos="fade-down" data-aos-delay="200" data-aos-duration="1000">                
+              <div class="text_area" data-aos="fade-down" data-aos-delay="200" data-aos-duration="1500">                
                 <img src="img/delicaci_tit2.png" alt="" />
                 <p class="t1">
                   한끼에 담은 오늘의 가치, 레스토랑 오늘이 선보이는 프리미엄
@@ -159,7 +159,7 @@
           </div>
           <div class="swiper-button-next"></div>
           <div class="swiper-button-prev"></div>
-          <!-- <div class="swiper-pagination"></div> -->
+          <div class="swiper-pagination"></div>
         </div>
       </section>
       <!-- //section : swifer -->
@@ -550,6 +550,7 @@
 
     <script src="js/oneul.js"></script>
     <script src="js/menu.js"></script>
+
     <script>
       /* mainSwiper */
       var swiper = new Swiper(".mainSwiper", {
@@ -566,10 +567,10 @@
           clickable: true,
         },
         autoplay: {
-          delay: 2500,
+          delay: 2300,
           disableOnInteraction: false,
         },
-      });     
+      });       
 
       /* menuSwiper */    
       var swiper = new Swiper(".menuSwiper", {
@@ -579,13 +580,34 @@
             nextEl: ".swiper-button-next",
         },
         autoplay: {
-              delay: 1500,
+              delay: 1600,
               disableOnInteraction: false,
         },
       });
 
+      /* hallSwiper */
+      var swiper = new Swiper(".hallSwiper", {
+        spaceBetween: 30,
+        effect: "fade",
+        loop: true,
+        type: "fraction",
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        autoplay: {
+          delay: 1500,
+          disableOnInteraction: false,
+        },
+      });     
+
       /* AOS */   
       AOS.init();
+
     </script>
   </body>
 </html>

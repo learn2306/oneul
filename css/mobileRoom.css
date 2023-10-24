@@ -179,7 +179,9 @@
 
 	/* Room : Reception */
 	/* div : sub_reception */
-	#sub_reception {width: 100%; height: 2em; border: none;}
+	#sub_reception {
+		width: 100%; height: 2em; border: none;
+	}
 	#sub_reception ul {
 		width: 100%; margin: 0 auto;
 	}
@@ -192,7 +194,8 @@
 		width: 49.5%; height: 3em; 
 		font-size: 1rem; 
 		line-height: 3em;
-		border: 1px solid #ccc;
+		border-collapse: collapse;
+		border: 1px solid #ddd;
 		background: white;	
 		text-align: center;
 		font-family: 'Montserrat', 'Noto Sans KR', sans-serif; 		

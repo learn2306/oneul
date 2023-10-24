@@ -46,8 +46,7 @@ header .gnb > ul > li > a:last-child {margin-right: 0;}
 header .gnb > ul > li:hover > a {color: #c27a34;}
 header .sub {
   position: absolute;
-  top: 133px;
-  /* top: 150px; */ left: 0;
+  top: 140px; left: 0;
   width: 100%; height: auto;  
   display: none;
   transition: 0.1s;
@@ -63,8 +62,9 @@ header .sub > ul > li {
   width: 150%;   /* 1 */
   position: relative; /* 3:absolute-위로 올라가서 나머지만 나타남, relative일때 전부 출력 */
   left: -45px; /* 2 */
-  line-height: 2.5; 
+  line-height: 1.7; 
   text-align: center;
+  padding: 10px 0;
 }
 header .sub ul > li > a {
   color: #222; text-align: center;  
@@ -226,14 +226,13 @@ header.fixed {
   top: -132px;
   left: 0;
   position: absolute;
-  width: 100%;
-  height: 100vh;
+  width: 100%; height: 100%;
   /* overflow: hidden; */
 }
 .swiper-wrapper .swiper-slide.bg1 {
   background: url(../img/visual06.jpg) no-repeat;
   width: 100%;
-  min-height: 100%;
+  height: 100%;
   position: relative;
 }
 .swiper-wrapper .swiper-slide.bg2 {
@@ -250,7 +249,7 @@ header.fixed {
 }
 .swiper-wrapper .swiper-slide .text_area {
   position: relative;
-  top: 40%; 
+  top: 43%; 
   /* transform: translate(-50%, -50%); */
   color: white;
   text-align: center;
@@ -269,7 +268,7 @@ header.fixed {
   font-size: 18px;
   font-family: "Montserrat", sans-serif;
 }
-.swiper-wrapper .swiper-slide .text_area .more {
+/* .swiper-wrapper .swiper-slide .text_area .more {
   font-family: "Montaga", serif;
   font-size: 22px;
   position: relative;
@@ -282,7 +281,7 @@ header.fixed {
   content: '';
   width: 80px; height: 2px;
   background: white;
-}
+} */
 .swiper.mainSwiper .swiper-button-prev:after,
 .swiper.mainSwiper .swiper-button-next:after {
   display: none;
@@ -299,15 +298,9 @@ header.fixed {
   width: 28px; height: 53px;
   background: url(../img/mv_next.png);
 }
-/* .swiper.mainSwiper .swiper-pagination:before {display: none;} */
-/* .swiper.mainSwiper .swiper-pagination {
-  background: url(../img/icon_menu_dot.png) repeat-x;
-  padding-bottom: 100px;
-  background-size: auto;
-  width: 60px;
-  text-align: center;
-  color: #fff;
-} */
+.swiper.mainSwiper .swiper-pagination {position: absolute; bottom: 200px; right: 950px;}
+.swiper-pagination-bullet { width: 10px; height: 10px; background: #f9f9f9; border: 1px solid #f9f9f9; opacity: 0.7; }
+.swiper-pagination-bullet-active { width: 10px; height: 10px; transition: width .5s; border-radius: 10px; background: #f09854; border: 1px solid #f09854; }
 
 /* section : oneul value */
 #value {width: 100%; margin-top: 100vh;}
@@ -699,7 +692,7 @@ header.fixed {
 /* div : hall */
 #hall {
   width: 100%;
-  height: 700px;
+  height: 620px;
   padding-top: 200px;
 }
 #hall .inner {
@@ -707,19 +700,20 @@ header.fixed {
   margin: 0 auto;
   position: relative;
 }
+#hall .inner img {height: 100%;}
 #hall .inner .floorone {
   position: absolute;
   top: 0;
-  left: 0;  
-  width: 268px; height: 620px;
+  left: 4px;  
+  width: 270px; height: 620px;
   display: block;
 }
 #hall .inner .floorone_media {display: none;}
 #hall .inner .floortwo {
   position: absolute;
   top: 0;
-  left: 285px;  
-  width: 268px; height: 620px;
+  left: 294px;  
+  width: 270px; height: 620px;
   display: block;
 }
 #hall .inner .floortwo_media {display: none;}
@@ -727,20 +721,21 @@ header.fixed {
 #hall .inner .floorthree {
   position: absolute;
   top: 0;
-  left: 570px;
-  display: block;
+  left: 581px;
+  width: 840px; height: 620px;
+  display: block;  
 }
 .swiper.hallSwiper {
   position: relative;
   top: 0;
-  left: 0;
-  width: 865px;
+  left: 3px;
+  width: 840px;
   height: 620px;
   overflow: hidden;
 }
 .swiper-wrapper .swiper-slide.hall1 {
-  background: url(../img/mh_img03.jpg);
-  min-width: 100%;
+  background: url(../img/mh_img03.jpg); 
+  width: 100%;
   height: 100%;
   position: relative;
 }
@@ -762,12 +757,16 @@ header.fixed {
 .swiper-wrapper .swiper-slide.hall7 {
   background: url(../img/room03_06.jpg);
 }
+.swiper.hallSwiper .swiper-pagination {position: absolute; bottom: 40px;}
+.swiper.hallSwiper .swiper-pagination-bullet { width: 10px; height: 10px; background: rgb(250, 250, 202); border: 1px solid rgb(250, 250, 202); opacity: 0.8; }
+.swiper.hallSwiper .swiper-pagination-bullet-active { width: 10px; height: 10px; transition: width .1s; border-radius: 10px; background: rgb(232, 232, 21); border: 1px solid rgb(232, 232, 21); }
+
 #hall .inner .floorthree_media {display: none;}
 #hall .inner .events {
   position: absolute;
   top: 0;
-  right: 0;  
-  width: 268px; height: 620px;
+  right: 4px;  
+  width: 270px; height: 620px;
   display: block;
 }
 #hall .inner .events_media {display: none;}
